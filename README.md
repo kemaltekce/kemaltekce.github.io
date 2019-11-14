@@ -1,1 +1,1 @@
-# own_page
+# kemaltekce.github.io
