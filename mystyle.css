@@ -157,6 +157,16 @@ div.left-padding {
         left: 50%;
         width: 100vh;
     }
+
+    .padding-is-large {
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 768.1px) {
+    .padding-is-small {
+        padding: 1rem;
+    }
 }
 
 .min-width-75 {
@@ -173,10 +183,6 @@ div.left-padding {
 
 .padding-top-is-05 {
     padding-top: 0.5rem;
-}
-
-.padding-is-large {
-    padding: 2rem;
 }
 
 .footer {
