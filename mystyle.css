@@ -30,7 +30,7 @@
 }
 
 .ds-back {
-    background-image: url(ds_half.png);
+    background-image: url(imgs/ds_half.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top right;
@@ -40,7 +40,7 @@
 }
 
 .lx-back {
-    background-image: url(lx_half.png);
+    background-image: url(imgs/lx_half.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top left;
@@ -186,7 +186,7 @@ div.left-padding {
 }
 
 .footer {
-    background: url(background.jpg) no-repeat fixed;
+    background: url(imgs/background.jpg) no-repeat fixed;
     background-size: contain;
     background-position: center center;
     height: 85vh;
@@ -220,6 +220,14 @@ html {
 
 .chunky_underline:hover::after {
     transform: scaleY(1);
+}
+
+#white.chunky_underline {
+    color: rgb(247, 144, 75);
+}
+
+#white.chunky_underline::after {
+    background: #f1f1f1;
 }
 
 .rev-block {
