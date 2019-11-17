@@ -21,9 +21,9 @@ After collecting some inspirations, I went to the drawing board and sketched a f
 
 ## Design Prototype
 After sketching, I started Inkscape and made design prototypes.
-Design 1|Design 2|Design 3
-:-------------------------:|:-------------------------:|:-------------------------:
-![](process/03_design_prototype_1.png)|![](process/03_design_prototype_2.png)|![](process/03_design_prototype_3.png)
+| Design 1                 | Design 2                  | Design 3                 |
+|:-------------------------:|:-------------------------:|:-------------------------:|
+| ![](process/03_design_prototype_1.png) | ![](process/03_design_prototype_2.png) | ![](process/03_design_prototype_3.png) |
 
 I asked family and some friends which design they find most interesting and beautiful. And with that the final decision came down to design number 3.
 
