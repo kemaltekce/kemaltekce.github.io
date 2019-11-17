@@ -185,6 +185,10 @@ div.left-padding {
     padding-top: 0.5rem;
 }
 
+.padding-bottom-is-05 {
+    padding-bottom: 0.5rem;
+}
+
 .footer {
     background: url(imgs/background.jpg) no-repeat fixed;
     background-size: contain;
