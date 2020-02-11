@@ -1,4 +1,4 @@
-let data = {
+const data = {
     work_exp: [
         {place: 'FoodTracks', subject: 'Data Scientist',
             time: 'Jan. 2018 - today'},
@@ -33,60 +33,60 @@ let data = {
             time: "2019"},
         {place: "TechLabs Bike Sharing Forecast Notebook",
             subject: "LX Design, Data Science",
-            time: "2019/20"},]
+            time: "2019/20"}]
 }
-let ids = ["work_exp", "edu", "project"];
 
-for (let j = 0; j < ids.length; j++) {
-    let data_ = data[ids[j]]
-    for (let i = 0; i < data_.length; i++) {
-        let section = document.getElementById(ids[j]);
+function generate_content(data){
+    for (const [id, items] of Object.entries(data)) {
+        for (const {place, time, subject, link} of items) {
+            let section = document.getElementById(id);
+            let mainDiv = document.createElement("div");
+            let firstSubDiv = document.createElement("div");
+            let secondSubDiv = document.createElement("div");
+            let placeElement;
+            let subjectElement = document.createElement("p");
+            let timeElement = document.createElement("p");
+
+            mainDiv.className = "columns is-mobile box-shadow-bottom";
+            firstSubDiv.className = "column";
+            secondSubDiv.className = "column";
+            if (link) {
+                placeElement = document.createElement("a");
+                placeElement.href = items.link;
+                placeElement.className = "has-text-weight-bold chunky_underline"
+                placeElement.id = "white"
+            } else {
+                placeElement = document.createElement("p");
+                placeElement.className = "text-orange has-text-weight-bold";
+            }
+
+            placeElement.appendChild(document.createTextNode(place));
+            subjectElement.appendChild(document.createTextNode(subject));
+            timeElement.appendChild(document.createTextNode(time));
+
+            firstSubDiv.appendChild(placeElement);
+            firstSubDiv.appendChild(subjectElement);
+            secondSubDiv.appendChild(timeElement);
+
+            mainDiv.appendChild(firstSubDiv);
+            mainDiv.appendChild(secondSubDiv);
+
+            section.appendChild(mainDiv);
+        }
+        let section = document.getElementById(id);
         let mainDiv = document.createElement("div");
         let firstSubDiv = document.createElement("div");
         let secondSubDiv = document.createElement("div");
-        let place;
-        let subject = document.createElement("p");
-        let time = document.createElement("p");
+        let placeElement = document.createElement("p");
+        let timeElement = document.createElement("p");
 
-        mainDiv.className = "columns is-mobile box-shadow-bottom";
-        firstSubDiv.className = "column";
-        secondSubDiv.className = "column";
-        if (data_[i].hasOwnProperty("link")) {
-            place = document.createElement("a");
-            place.href = data_[i].link;
-            place.className = "has-text-weight-bold chunky_underline"
-            place.id = "white"
-        } else {
-            place = document.createElement("p");
-            place.className = "text-orange has-text-weight-bold";
-        }
-
-        place.appendChild(document.createTextNode(data_[i].place));
-        subject.appendChild(document.createTextNode(data_[i].subject));
-        time.appendChild(document.createTextNode(data_[i].time));
-
-        firstSubDiv.appendChild(place);
-        firstSubDiv.appendChild(subject);
-        secondSubDiv.appendChild(time);
+        firstSubDiv.appendChild(placeElement);
+        secondSubDiv.appendChild(timeElement);
 
         mainDiv.appendChild(firstSubDiv);
         mainDiv.appendChild(secondSubDiv);
 
         section.appendChild(mainDiv);
     }
-
-    let section = document.getElementById(ids[j]);
-    let mainDiv = document.createElement("div");
-    let firstSubDiv = document.createElement("div");
-    let secondSubDiv = document.createElement("div");
-    let place = document.createElement("p");
-    let time = document.createElement("p");
-
-    firstSubDiv.appendChild(place);
-    secondSubDiv.appendChild(time);
-
-    mainDiv.appendChild(firstSubDiv);
-    mainDiv.appendChild(secondSubDiv);
-
-    section.appendChild(mainDiv);
 }
+generate_content(data)
