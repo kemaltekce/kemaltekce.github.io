@@ -33,7 +33,8 @@ const data = {
             time: "2019"},
         {place: "TechLabs Bike Sharing Forecast Notebook",
             subject: "LX Design, Data Science",
-            time: "2019/20"}]
+            time: "2019/20",
+            link:"https://github.com/kemaltekce/tl_learning_notebook_bikesharing"}]
 }
 
 function generate_content(data){
@@ -52,7 +53,7 @@ function generate_content(data){
             secondSubDiv.className = "column";
             if (link) {
                 placeElement = document.createElement("a");
-                placeElement.href = items.link;
+                placeElement.href = link;
                 placeElement.className = "has-text-weight-bold chunky_underline"
                 placeElement.id = "white"
             } else {
