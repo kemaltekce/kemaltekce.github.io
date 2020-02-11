@@ -34,7 +34,11 @@ const data = {
         {place: "TechLabs Bike Sharing Forecast Notebook",
             subject: "LX Design, Data Science",
             time: "2019/20",
-            link:"https://github.com/kemaltekce/tl_learning_notebook_bikesharing"}]
+            link:"https://github.com/kemaltekce/tl_learning_notebook_bikesharing"},
+        {place: "Forwardtesting Time Series cross-validator",
+            subject: "Numpy, Pandas, Sklearn",
+            time: "2020",
+            link: "https://github.com/kemaltekce/sklearn_forward_time_series_split"}]
 }
 
 function generate_content(data){
