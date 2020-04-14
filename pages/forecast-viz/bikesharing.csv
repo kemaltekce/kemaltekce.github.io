@@ -1,4 +1,4 @@
-let csvData = `datetime,season,holiday,workingday,weather,temp,atemp,humidity,windspeed,casual,registered,count
+datetime,season,holiday,workingday,weather,temp,atemp,humidity,windspeed,casual,registered,count
 2011-01-01 00:00:00,1,0,0,1,9.84,14.395,81,0,3,13,16
 2011-01-01 01:00:00,1,0,0,1,9.02,13.635,80,0,8,32,40
 2011-01-01 02:00:00,1,0,0,1,9.02,13.635,80,0,5,27,32
@@ -10885,4 +10885,3 @@ let csvData = `datetime,season,holiday,workingday,weather,temp,atemp,humidity,wi
 2012-12-19 21:00:00,4,0,1,1,13.94,15.91,61,15.0013,4,164,168
 2012-12-19 22:00:00,4,0,1,1,13.94,17.425,61,6.0032,12,117,129
 2012-12-19 23:00:00,4,0,1,1,13.12,16.665,66,8.9981,4,84,88
-`

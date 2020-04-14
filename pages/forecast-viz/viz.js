@@ -6,13 +6,19 @@ function get_weekend(d) {
     return 0}
   }
 
-let data = d3.csvParse(csvData)
-  .slice(0, 400)
-  .map(function(d) {return {
-    datetime: d.datetime,
-    target: d.count,
-    workingday: d.workingday,
-    holiday: d.holiday}})
+d3.csv("./bikesharing.csv")
+  .then(function (csv) {
+    let data = csv
+      .slice(0, 400)
+      .map(function(d) {
+        return {
+          datetime: d.datetime,
+          target: d.count,
+          workingday: d.workingday,
+          holiday: d.holiday
+        }
+      })
+
 data.forEach(d => {
   d.target = +d.target;
   d.datetime = new Date(d.datetime)
@@ -529,3 +535,4 @@ mouseG.append('svg:rect') // append a rect to catch mouse movements on canvas
         .attr("transform", `translate(${mouse[0] - 5 - hoverWidth}, ${mouse[1] + 15})`)
     }
   })
+});
