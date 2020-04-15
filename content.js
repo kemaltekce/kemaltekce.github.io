@@ -38,7 +38,11 @@ const data = {
         {place: "Forwardtesting Time Series cross-validator",
             subject: "Numpy, Pandas, Sklearn",
             time: "2020",
-            link: "https://github.com/kemaltekce/sklearn_forward_time_series_split"}]
+            link: "https://github.com/kemaltekce/sklearn_forward_time_series_split"},
+        {place: "Forcast visualization",
+            subject: "D3.js",
+            time: "2020",
+            link: "/pages/forecast-viz/index.html"}]
 }
 
 function generate_content(data){
