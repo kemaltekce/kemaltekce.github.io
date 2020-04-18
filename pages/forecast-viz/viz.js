@@ -6,20 +6,22 @@ function get_weekend(d) {
     return 0}
   }
 
-let data = d3.csvParse(csvData)
+var newParser = d3.dsvFormat(';')
+let data = newParser.parse(csvData)
   .slice(0, 400)
   .map(function(d) {return {
     datetime: d.datetime,
-    target: d.count,
+    target: d.target,
     workingday: d.workingday,
-    holiday: d.holiday}})
+    holiday: d.holiday,
+    prediction: d.prediction,
+    error: d.error}})
 data.forEach(d => {
-  d.target = +d.target;
+  d.target = +d.target
+  d.prediction = +d.prediction
+  d.error = +d.error
   d.datetime = new Date(d.datetime)
   d.workingday = +d.workingday
-  // XXX: create dummy predictions until you add real predicitons
-  d.prediction = +d.target + Math.floor((Math.random() - 0.5) * 50)
-  d.error = d.prediction - d.target
   d.weekday = new Date(d.datetime).getDay()
   d.weekend = get_weekend(d)
   d.holiday = +d.holiday
@@ -51,7 +53,7 @@ const width = windowWidth - margin.left - margin.right;
 // parameters
 const lineChartHeight = height * 0.3
 const rectHeight = lineChartHeight * 0.7
-const errorplotHeight = height * 0.5
+const errorplotHeight = height * 0.45
 const xAxisHeight = height * 0.58
 const hLineHeight = {'workingday': height * 0.8, 'holiday': height * 0.9}
 
