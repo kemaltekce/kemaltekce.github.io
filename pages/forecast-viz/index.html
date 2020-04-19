@@ -20,6 +20,54 @@
         </div>
       </div>
     </div>
+    <section class="section">
+      <div class="content is-size-6">
+        <h2 class="is-size-4 has-text-weight-bold">
+          Hello and welcome to my forecast visualization.
+        </h2>
+        <p>
+          The goal of this project was to visualize forecasted data so that the
+          engineer or user can analyse and understand the machine learning (ML)
+          model's capabilities and limits. Besides, I also wanted to learn more
+          about D3.js.
+        </p>
+        <h3 class="is-size-5 has-text-weight-bold">The data</h3>
+        <p>
+          The data you see in this project is the
+          <a href="https://www.kaggle.com/c/bike-sharing-demand" class="has-text-weight-bold chunky_underline">bikesharing dataset</a>
+          from Kaggle. The ML goal was to build a forecasting model that
+          predicts the demand of bikes for a given date and hourly time. Below
+          you can see the <span class="has-text-weight-bold" style="color: #688BAB">target</span>,
+          <span class="has-text-weight-bold" style="color: #E25A42">prediction</span>
+          as well as <span class="has-text-weight-bold" style="color: #95A17E">error</span>
+          as line plots. Furthermore, additonal features - besides datetime
+          features - that the model used are displayed as barplot -
+          <span class="has-text-weight-bold" style="color: #f8ba91">Monday to Friday</span>
+          and <span class="has-text-weight-bold" style="color: #635F5D">weekends</span> -
+          and horizontal line plots -
+          <span class="has-text-weight-bold" style="color: #635F5D">workingday</span>/<span class="has-text-weight-light" style="color: #635F5D">no-workingday</span>
+          and
+          <span class="has-text-weight-bold" style="color: #635F5D">holiday</span>/<span class="has-text-weight-light" style="color: #635F5D">no-holiday</span>.
+        </p>
+        <h3 class="is-size-5 has-text-weight-bold">The machine learning model</h3>
+        <p>
+          The ML model is a basic Random Forest (RF) model and was implemented
+          using the ML library <a href="https://scikit-learn.org/stable/index.html" class="has-text-weight-bold chunky_underline">sklearn</a>
+          and its great pipeline structure.
+          The best RF model was selected via grid search. To ensure that the
+          grid search runs with the correct forward moving splits, because we have
+          a time series data at hand, the <a href="https://github.com/kemaltekce/sklearn_forward_time_series_split" class="has-text-weight-bold chunky_underline">ForwardTimeSeriesSplit</a>
+          was used. After the best model was selected, the question was how good
+          the final model is. For this, a forward-test was run using the
+          <a href="https://github.com/kemaltekce/sklearn_forward_time_series_split" class="has-text-weight-bold chunky_underline">ForwardTimeSeriesSplit</a>
+          again and a holdout dataset, which the grid search hasn't seen before.
+          The resulting predictions from the forward test are visualized below.
+          The model itself isn't perfect, and can and should be further optimized.
+          The visualizations below can be used to analyse the forecasts and
+          formulate new questions and hypotheses to further improve the model.
+        </p>
+      </div>
+    </section>
     <div class="section">
       <div class="columns is-mobile">
         <div class="column is-1 hide-overflow min-width-75 no-top-padding">
