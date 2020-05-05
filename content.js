@@ -42,7 +42,11 @@ const data = {
         {place: "Forcast visualization",
             subject: "D3.js",
             time: "2020",
-            link: "/pages/forecast-viz/index.html"}]
+            link: "/pages/forecast-viz/index.html"},
+        {place: "Covid19 visualization",
+            subject: "D3.js",
+            time: "2020",
+            link: "/pages/covid-viz/index.html"}]
 }
 
 function generate_content(data){

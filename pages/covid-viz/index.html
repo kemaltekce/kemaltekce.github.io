@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KmlTkc - Forecast Visualization</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+
+<body>
+  <div style="max-width: 800px; margin: auto;">
+    <div class="section">
+      <div class="columns has-text-weight-bold header-style">
+        <div class="column no-side-padding">
+          <a class="navbar-item is-size-3-tablet is-size-4-mobile">{Covid19 Visualization}</a>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="columns is-mobile">
+        <div class="column is-1 hide-overflow min-width-75 no-top-padding">
+            <p class="section-number">01</p>
+        </div>
+        <div class="column has-text-weight-bold">
+          <p class="has-text-weight-bold is-size-4-tablet is-size-5-mobile title">Introduction</p>
+        </div>
+      </div>
+      <div class="content is-size-6">
+        <p class="bigger-margin-bottom">
+          Welcome to my Covid19 data visualization! Below you can see the amount
+          of <span class="has-text-weight-bold" style="color: #E25A42">currently infected</span>,
+          <span class="has-text-weight-bold" style="color: #6BBBA1">revovered</span>, and
+          <span class="has-text-weight-bold" style="color: #7C715E">dead</span> people
+          in the city of Münster Germany. Big thank you
+          to the
+          <a href="https://opendata.stadt-muenster.de/dataset/coronavirus-infektionen-sars-cov-2-im-regierungsbezirk-m%C3%BCnster" class="has-text-weight-bold chunky_underline">Open&nbsp;Data&nbsp;Portal</a>
+          of Münster which made this data available.
+        </p>
+      </div>
+      <div class="columns is-mobile">
+        <div class="column is-1 hide-overflow min-width-75 no-top-padding">
+            <p class="section-number">02</p>
+        </div>
+        <div class="column has-text-weight-bold">
+          <p class="has-text-weight-bold is-size-4-tablet is-size-5-mobile title">Visualization</p>
+        </div>
+      </div>
+      <div class="svg-container">
+        <svg class='main'></svg>
+      </div>
+    </div>
+  </div>
+  <script src="viz.js"></script>
+</body>
