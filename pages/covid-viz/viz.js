@@ -190,7 +190,7 @@ function render(data) {
     })
 }
 
-let link = "https://gist.githubusercontent.com/kemaltekce/52650b06a556276ad2f254add02dc46a/raw/28db233fb78bb3d4def466fe456d993dd3b4b3c8/covi19_muenster.csv"
+let link = "https://gist.githubusercontent.com/kemaltekce/52650b06a556276ad2f254add02dc46a/raw/68b299125f85793d22071804ac89331ca85ce851/covi19_muenster.csv"
 
 function toDate(dateStr) {
   var parts = dateStr.split(".")
