@@ -8,14 +8,21 @@ function render(data) {
       if (data[i].death == 0) {data[i].death = data[i-1].death}
     }
   }
+  // new infections
+  for(var i = 1; i < data.length; i++){
+    data[i].newInfected = data[i].infected - data[i-1].infected
+  }
   // calculate current amount of infected people
   data.forEach(d => {
-    d.infected = d.infected - d.recovered - d.death
+    d.infected = d.infected - d.recovered - d.death - d.newInfected
   });
+
+  // columns
+  var cols = ['infected', 'newInfected', 'recovered', 'death']
 
   // transpose data
   var stack = d3.stack()
-    .keys(['infected', 'recovered', 'death'])
+    .keys(cols)
     .order(d3.stackOrderNone)
     .offset(d3.stackOffsetNone)
   var dataset = stack(data)
@@ -52,9 +59,9 @@ function render(data) {
     .domain([0, d3.max(dataset, d => d3.max(d, d => d[1]))])
     .range([0, height]);
 
-  var colors = ['#E25A42', '#6BBBA1', '#7C715E']
+  var colors = ['#E25A42', '#BD2D28', '#6BBBA1', '#7C715E']
   const color = d3.scaleOrdinal()
-    .domain(['infected', 'recovered', 'death'])
+    .domain(cols)
     .range(colors);
 
   // create axis
@@ -117,9 +124,9 @@ function render(data) {
 
     el.text('');
     var tspan = el.append('tspan').text(date)
-    var list = ['infected', 'recovered', 'death']
-    for (var i = 0; i < list.length; i++) {
-      el.append('tspan').text(list[i] + ': ' + values[list[i]])
+    var translation = ['infected', 'additional new infections', 'recovered', 'death']
+    for (var i = 0; i < translation.length; i++) {
+      el.append('tspan').text(translation[i] + ': ' + values[cols[i]])
         .attr('x', 0).attr('dy', '15');
     }
     var total = values['infected'] + values['recovered'] + values['death']
@@ -144,8 +151,8 @@ function render(data) {
     .attr('class', 'mouse-text-group');
   d3.select('.mouse-text-group')
     .append('rect')
-    .attr('width', 105)
-    .attr('height', 80)
+    .attr('width', 170)
+    .attr('height', 97)
     .attr('rx', 1)
     .attr('ry', 1)
     .attr('fill', '#f8ba91')
@@ -190,7 +197,8 @@ function render(data) {
     })
 }
 
-let link = "https://gist.githubusercontent.com/kemaltekce/52650b06a556276ad2f254add02dc46a/raw/68b299125f85793d22071804ac89331ca85ce851/covi19_muenster.csv"
+//let link = "https://gist.githubusercontent.com/kemaltekce/52650b06a556276ad2f254add02dc46a/raw/68b299125f85793d22071804ac89331ca85ce851/covi19_muenster.csv"
+let link = "https://raw.githubusercontent.com/od-ms/resources/master/coronavirus-fallzahlen-regierungsbezirk-muenster.csv"
 
 function toDate(dateStr) {
   var parts = dateStr.split(".")
@@ -201,10 +209,16 @@ var dateFormat = d3.timeFormat('%d-%m-%Y')
 
 let data = d3.csv(link, function(d){
   return {
-    city: d.city,
-    date: dateFormat(new Date(toDate(d.date))),
-    infected: +d.infected,
-    recovered: +d.recovered,
-    death: +d.death
+    // city: d.city,
+    // date: dateFormat(new Date(toDate(d.date))),
+    // infected: +d.infected,
+    // recovered: +d.recovered,
+    // death: +d.death
+    city: d.Gebiet,
+    date: dateFormat(new Date(toDate(d.Datum))),
+    infected: +d['Bestätigte Faelle'],
+    recovered: +d.Gesundete,
+    death: +d.Todesfaelle,
+    newInfected: 0
   }
 }).then(render)
