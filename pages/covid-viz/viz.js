@@ -11,6 +11,9 @@ function render(data) {
   // new infections
   for(var i = 1; i < data.length; i++){
     data[i].newInfected = data[i].infected - data[i-1].infected
+    if (data[i].newInfected < 0) {
+      data[i].newInfected = 0
+    }
   }
   // calculate current amount of infected people
   data.forEach(d => {
@@ -37,7 +40,7 @@ function render(data) {
     // .attr('width', windowWidth)
     // .attr('height', windowHeight)
   // add margin for axis
-  const margin = {top: 0, right: 50, bottom: 80, left: 50};
+  const margin = {top: 0, right: 25, bottom: 80, left: 50};
   const height = windowHeight - margin.top - margin.bottom;
   const width = windowWidth - margin.left - margin.right;
 
@@ -67,7 +70,9 @@ function render(data) {
   // create axis
   const axis = d3.axisBottom(xScale)
   if (windowWidth < 800) {
-  axis.tickValues(xScale.domain().filter((d, i) => (i + 1) % 2 == 0))
+    axis.tickValues(xScale.domain().filter((d, i) => (i + 1) % 3 == 0))
+  } else {
+    axis.tickValues(xScale.domain().filter((d, i) => (i + 1) % 2 == 0))
   }
   const xAxis = body.append('g')
     .attr('id', 'xAxis')
@@ -129,7 +134,7 @@ function render(data) {
       el.append('tspan').text(translation[i] + ': ' + values[cols[i]])
         .attr('x', 0).attr('dy', '15');
     }
-    var total = values['infected'] + values['recovered'] + values['death']
+    var total = values['infected'] + values['recovered'] + values['death'] + values['newInfected']
     el.append('tspan').text('total: ' + total)
       .attr('x', 0).attr('dy', '15');
 
@@ -138,6 +143,15 @@ function render(data) {
       .attr('font-family', 'sans-serif')
       .attr('font-size', 12)
   };
+  function createHoverBar(date) {
+    var value = data.filter(d => d.date == date)[0]
+    var total = value['infected'] + value['recovered'] + value['death'] + value['newInfected']
+    d3.select(".mouse-bar rect")
+      .attr('width', xScale.bandwidth())
+      .attr('height', heightScale(total))
+      .attr('x', xScale(date))
+      .attr('y', yScale(total))
+  }
   function invertPointScale(x, scale) {
     var range = scale.range()
     var domain = scale.domain()
@@ -162,6 +176,13 @@ function render(data) {
     .append('text')
     .attr('class', 'mouse-text');
 
+  mouseG.append('g')
+    .attr('class', 'mouse-bar');
+  d3.select(".mouse-bar")
+    .append('rect')
+    .attr('fill', '#f8ba91')
+    .attr('opacity', '0')
+
   mouseG.append('svg:rect') // append a rect to catch mouse movements on canvas
     .attr('width', width) // can't catch mouse events on a g element
     .attr('height', height)
@@ -172,12 +193,16 @@ function render(data) {
         .style('opacity', '0');
       d3.select('.mouse-text-group rect')
         .style('opacity', '0');
+      d3.select('.mouse-bar rect')
+        .style('opacity', '0')
     })
     .on('mouseover', function() { // on mouse in show line, circles and text
       d3.select(".mouse-text")
         .style("opacity", "1");
       d3.select(".mouse-text-group rect")
         .style("opacity", "0.8");
+      d3.select(".mouse-bar rect")
+        .style("opacity", "0.5")
     })
     .on('mousemove', function() {
       var mouse = d3.mouse(this);
@@ -186,6 +211,7 @@ function render(data) {
       d3.select('.mouse-text')
         .attr('transform', `translate(${mouse[0] + 15}, ${mouse[1] + 15})`)
       createHoverInfo(invertPointScale(mouse[0], xScale))
+      createHoverBar(invertPointScale(mouse[0], xScale))
 
       if (mouse[0] > width / 2) {
         var hoverWidth = +d3.select('.mouse-text-group rect').attr('width')
