@@ -121,7 +121,7 @@ div.bpadding + div.bpadding {
 }
 
 .footer {
-    background: url("/images/background.jpg") no-repeat fixed;
+    background: url("/images/background.jpeg") no-repeat fixed;
     background-size: contain;
     background-position: center center;
     height: 85vh;
@@ -136,6 +136,11 @@ div.bpadding + div.bpadding {
 
 .grey {
     background-color: #F0F0F4;
+    color: #919195 !important;
+}
+
+.grey-light {
+    background-color: #FBF8F8;
     color: #919195 !important;
 }
 
