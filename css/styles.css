@@ -78,19 +78,31 @@ section.post h1 {
 }
 
 section.post h2 {
-    font-size: 22px !important;
+    font-size: 24px !important;
     color: #464646;
     font-weight: bold;
 }
 
-section.post article.green p{
+section.post article.green p, section.post article.green a{
     color: #819393 !important;
     padding-bottom: 20px;
 }
 
-section.post article.orange p{
+section.post article.orange p, section.post article.orange a{
     color: #B1A6A0 !important;
     padding-bottom: 20px;
+}
+
+section.post a {
+    font-weight: bold;
+}
+
+section.post img {
+    display: block;
+    margin: auto;
+    width: 80%;
+    padding-bottom: 20px;
+    mix-blend-mode: multiply;
 }
 
 .bpadding {
