@@ -6,7 +6,7 @@ html {
 }
 
 body {
-    font-family: inter !important;
+    font-family: 'Inter', sans-serif !important;
     background-color: #FBF8F8;
     max-width: 900px;
     margin: auto;
@@ -74,13 +74,13 @@ img {
 section.post h1 {
     font-size: 40px !important;
     color: #464646;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 section.post h2 {
     font-size: 24px !important;
     color: #464646;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 section.post article.green p, section.post article.green a{
@@ -94,7 +94,7 @@ section.post article.orange p, section.post article.orange a{
 }
 
 section.post a {
-    font-weight: bold;
+    font-weight: 700;
 }
 
 section.post img {
@@ -127,11 +127,6 @@ div.bpadding + div.bpadding {
     content: "• ";
 }
 
-.fancy {
-    font-family: Futura;
-    /*font-size: 33px;*/
-}
-
 .footer {
     background: url("/images/background.jpeg") no-repeat fixed;
     background-size: contain;
@@ -157,7 +152,7 @@ div.bpadding + div.bpadding {
 }
 
 .heading {
-    font-weight: bold;
+    font-weight: 700;
     color: #464646;
 }
 
