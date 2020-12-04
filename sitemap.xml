@@ -3,12 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://kmltkc.de/post_1/</loc>
+    <loc>https://kmltkc.de/001_post/</loc>
     <lastmod>2017-03-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://kmltkc.de/post_2/</loc>
+    <loc>https://kmltkc.de/002_post/</loc>
+    <lastmod>2017-03-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kmltkc.de/003_post/</loc>
     <lastmod>2017-03-23T00:00:00+00:00</lastmod>
   </url>
   

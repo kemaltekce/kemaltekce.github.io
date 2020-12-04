@@ -93,6 +93,11 @@ section.post article.orange p, section.post article.orange a{
     padding-bottom: 20px;
 }
 
+section.post article.white p, section.post article.white a {
+    color: #919195 !important;
+    padding-bottom: 20px;
+}
+
 section.post a {
     font-weight: 700;
 }
@@ -103,6 +108,15 @@ section.post img {
     width: 80%;
     padding-bottom: 20px;
     mix-blend-mode: multiply;
+}
+
+section.post i {
+    font-size: 20px;
+}
+
+section.article-footer {
+    padding-top: 0px;
+    margin-top: 0px;
 }
 
 .bpadding {
@@ -248,4 +262,9 @@ div.tpadding + div.tpadding {
 
 .welcome {
     background-color: #FBF8F8;
+}
+
+.white {
+    background-color: #FBF8F8;
+    color: #919195;
 }
