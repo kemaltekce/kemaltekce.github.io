@@ -21,28 +21,43 @@ body.post {
 }
 
 section {
-    margin: 3%;
+    margin: 3% !important;
     padding: 5% 7%;
     border-radius: 25px;
 }
 
 h1 {
     text-transform: uppercase;
-    font-size: 23vw !important;
+    font-size: 27vw !important;
     color: #C4C4C4;
     position: relative;
-    z-index: 3;
+    z-index: 4;
+    font-weight: 700;
+}
+
+.header-image {
+    display: inline ;
+}
+
+.section-image {
+    display: none;
 }
 
 @media screen and (min-width: 768px) {
     h1 {
-       font-size: 12vw !important;
+       font-size: 27vw !important;
+    }
+    .header-image {
+        display: none;
+    }
+    .section-image {
+        display: flex;
     }
 }
 
 @media screen and (min-width: 900px) {
     h1 {
-       font-size: 110px !important;
+       font-size: 220px !important;
     }
 }
 
@@ -54,7 +69,7 @@ p {
 }
 
 h1 + p {
-    margin-left: -10px;
+    margin-left: 10px;
     padding-left: 10px;
     border-left: 3px solid #464646;
 }
@@ -69,7 +84,16 @@ a:hover{
 
 img {
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    border-radius: 25px;
+}
+
+.image {
+    padding: 0;
+}
+
+.image div {
+    padding: 0;
 }
 
 section.post h1 {
@@ -135,20 +159,12 @@ div.bpadding + div.bpadding {
 .button {
     border-radius: 6px;
     background-color: #C6E0E0;
-    color: #FBF8F8
+    color: #FBF8F8;
+    margin-left: 10px;
 }
 
 .dot:before {
     content: "• ";
-}
-
-.footer {
-    background: url("/images/background.jpeg") no-repeat fixed;
-    background-size: contain;
-    background-position: center center;
-    height: 85vh;
-    max-width: 1200px;
-    margin: auto;
 }
 
 .green {
@@ -166,6 +182,11 @@ div.bpadding + div.bpadding {
     color: #919195 !important;
 }
 
+.simple-heading {
+    font-weight: 700;
+    color: #464646;
+}
+
 .heading {
     font-weight: 700;
     color: #464646;
@@ -177,14 +198,15 @@ div.bpadding + div.bpadding {
 
 .main-content {
     position: relative;
+    overflow: hidden;
 }
 
 .main-content:after {
     content: "";
     top: -1%;
-    left: 0;
+    left: -5%;
     position: absolute;
-    width: 100%;
+    width: 120%;
     height: 102%;
     background: #FBF8F8;
     animation: reveal 1.5s cubic-bezier(0.2, 1, 0.2, 1) forwards;
@@ -194,13 +216,17 @@ div.bpadding + div.bpadding {
 
 @keyframes reveal {
     0% {
-        left: 0;
-        width: 100%;
+        left: -5%;
+        width: 120%;
     }
     100% {
-        left: 100%;
+        left: 120%;
         width: 0%;
     }
+}
+
+.social {
+    margin-left: 10px;
 }
 
 .social:hover a {
@@ -263,9 +289,33 @@ div.tpadding + div.tpadding {
 
 .welcome {
     background-color: #FBF8F8;
+    padding: 0;
 }
 
 .white {
     background-color: #FBF8F8;
     color: #919195;
+}
+
+.moving-p {
+    position: relative;
+    margin: 25% 0px 0px 0px;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.moving-p p {
+    font-size: 95px;
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    color: #C4C4C4;
+    transform: translateX(-50px);
+}
+
+#reverse {
+    margin: 35% 0px 0px 0px;
+}
+
+#reverse p{
+    transform: translateX(-1500px);
 }
