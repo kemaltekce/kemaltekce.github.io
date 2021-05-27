@@ -68,10 +68,10 @@ p {
     line-height: 27px;
 }
 
-h1 + p {
-    margin-left: 10px;
+h1 + p, .verticalline {
+    margin-left: 5px;
     padding-left: 10px;
-    border-left: 3px solid #464646;
+    border-left: 3px solid;
 }
 
 nav a{
@@ -79,7 +79,7 @@ nav a{
 }
 
 a:hover{
-    color: #464646;
+    color: #919195;
 }
 
 img {
@@ -144,8 +144,12 @@ section.article-footer {
     margin-top: 0px;
 }
 
+section[id], div.p-3 {
+    box-shadow: 0px 0px 7px -2px rgb(226, 226, 226);
+}
+
 .bpadding {
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 div.bpadding + div.bpadding {
@@ -158,7 +162,7 @@ div.bpadding + div.bpadding {
 
 .button {
     border-radius: 6px;
-    background-color: #C6E0E0;
+    background-color: #474747;
     color: #FBF8F8;
     margin-left: 10px;
 }
@@ -168,8 +172,9 @@ div.bpadding + div.bpadding {
 }
 
 .green {
-    background-color: #C6E0E0;
-    color: #819393 !important;
+    /* background-color: #4e7769; */
+    background-color: #d0e0df;
+    color: #FBF8F8 !important;
 }
 
 .grey {
@@ -306,8 +311,6 @@ div.tpadding + div.tpadding {
 
 .moving-p p {
     font-size: 95px;
-    font-family: 'Bodoni Moda', serif;
-    font-style: italic;
     color: #C4C4C4;
     transform: translateX(-50px);
 }
