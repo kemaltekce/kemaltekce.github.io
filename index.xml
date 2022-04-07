@@ -5,7 +5,8 @@
     <link>https://kmltkc.de/</link>
     <description>Recent content on Kemal Tekce</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://kmltkc.de/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://kmltkc.de/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>conscious neuroplasticity.</title>
       <link>https://kmltkc.de/037_conscious-neuroplasticity/</link>
@@ -388,6 +389,51 @@ I’m super excited because I want to learn more about UX Design. I’m curious 
       <guid>https://kmltkc.de/001_struggles/</guid>
       <description>It is Friday morning. It is my learning day. I wake up. Get ready. And start learning. I enjoy learning new skills. This time I want to learn more about creating websites. My goal is to build a digital bullet journal prototype.
 At least this was the plan. The last couple of Fridays I struggled with learning. I’m either lacking the energy, or I’m getting distracted easily, or I’m planning too much for the day.</description>
+    </item>
+    
+    <item>
+      <title>📚 medium.</title>
+      <link>https://kmltkc.de/projects/00_medium/</link>
+      <pubDate>Sun, 10 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://kmltkc.de/projects/00_medium/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>🎒 lean learning.</title>
+      <link>https://kmltkc.de/projects/01_leanlearning/</link>
+      <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://kmltkc.de/projects/01_leanlearning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>✏️ dibujo - the digital bullet journal.</title>
+      <link>https://kmltkc.de/projects/02_dibujo/</link>
+      <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://kmltkc.de/projects/02_dibujo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>🚲 data science practice story.</title>
+      <link>https://kmltkc.de/projects/03_dspracticestory/</link>
+      <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://kmltkc.de/projects/03_dspracticestory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>🤖 scraping course.</title>
+      <link>https://kmltkc.de/projects/04_scraping/</link>
+      <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://kmltkc.de/projects/04_scraping/</guid>
+      <description></description>
     </item>
     
   </channel>
