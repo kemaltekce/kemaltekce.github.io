@@ -410,29 +410,38 @@ At least this was the plan. The last couple of Fridays I struggled with learning
     </item>
     
     <item>
-      <title>✏️ dibujo - the digital bullet journal.</title>
-      <link>https://kmltkc.de/projects/02_dibujo/</link>
+      <title>🎧 notion - learning template.</title>
+      <link>https://kmltkc.de/projects/02_notionlearning/</link>
       <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://kmltkc.de/projects/02_dibujo/</guid>
+      <guid>https://kmltkc.de/projects/02_notionlearning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>✏️ dibujo - the digital bullet journal.</title>
+      <link>https://kmltkc.de/projects/03_dibujo/</link>
+      <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://kmltkc.de/projects/03_dibujo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>🚲 data science practice story.</title>
-      <link>https://kmltkc.de/projects/03_dspracticestory/</link>
-      <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
+      <link>https://kmltkc.de/projects/04_dspracticestory/</link>
+      <pubDate>Wed, 06 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://kmltkc.de/projects/03_dspracticestory/</guid>
+      <guid>https://kmltkc.de/projects/04_dspracticestory/</guid>
       <description></description>
     </item>
     
     <item>
       <title>🤖 scraping course.</title>
-      <link>https://kmltkc.de/projects/04_scraping/</link>
-      <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
+      <link>https://kmltkc.de/projects/05_scraping/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://kmltkc.de/projects/04_scraping/</guid>
+      <guid>https://kmltkc.de/projects/05_scraping/</guid>
       <description></description>
     </item>
     
