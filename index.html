@@ -23,7 +23,7 @@
   </head>
   <body class="max-w-[800px] m-auto p-5">
     <div id="intro" class="h-screen">
-      <div class="text-6xl max-[650px]:text-3xl font-light">
+      <div class="text-6xl max-[650px]:text-4xl font-light">
         <div>hello.</div>
         <a class="font-normal group hover:underline" href="#about">
           i'm kemal tekce.
@@ -34,8 +34,9 @@
           />
         </a>
         <div x-data="{sections: ['experience', 'projects', 'contact']}">
-          <template x-for="section in sections">
+          <template x-for="section in sections" :key="section">
             <a
+              :class="section === 'projects' ? 'text-[#C4C4C4] hover:text-[#DCA07C]' : ''"
               class="hover:text-[#C4C4C4] group flex"
               x-bind:href="'#' + section"
             >
@@ -50,15 +51,13 @@
         </div>
       </div>
       <div class="pt-5 w-3/4">
-        hi. i'm kemal. yet another developer, ex-physicist and passionate
-        learner.
+        hi. i'm kemal. yet another programmer, ex-physicist and parent.
       </div>
       <div
         class="flex max-[400px]:flex-col"
         x-data="{socials: [
         {name: 'github', link: 'https://github.com/kemaltekce'},
         {name: 'linkedin', link: 'https://www.linkedin.com/in/kemaltekce'},
-        {name: 'medium', link: 'https://kmltkc.medium.com/'},
         {name: 'research gate', link: 'https://www.researchgate.net/scientific-contributions/2083087425-Kemal-Tekce'},
 
         ]}"
@@ -87,15 +86,15 @@
       <div>// about</div>
       <div class="pt-3">
         Hi. I’m Kemal 👋. I'm a physicist by education who made the jump into
-        Data Science, Python Engineering and programming in general -
-        experimenting with Svelte lately.
+        Data Science, Python Engineering and programming in general.
         <br />
         <br />
         Currently, I'm helping bakeries get most out of their data by utalizing
-        my Python skills. Besides, I'm trying to build some tools - mainly for
-        myself and potentially for others. I'm working on the Lean Learning
-        Method, a simple digital bullet journal - calendle -, and flexible
-        timeboxing timer - focle.
+        my Python skills. Building pipelines to process data, building a
+        datalake to collect data and building scripts for our team to find
+        customer insights. Besides, I'm trying to build my own tools like a
+        simple digital bullet journal - calendle - or a flexible timeboxing
+        timer - focle.
       </div>
     </div>
     <div
@@ -142,14 +141,12 @@
          text: 'Yet aonther timer. Focle is an app that aims to improve your focus by using the flexible timboxing method.'},
         {name: '🎒 lean learning', link: 'http://kmltkc.de/leanlearning',
          text: 'Lean Learning is yet another learning method. It is designed to make learning more intentinal and joyful.'},
-        {name: '📝 writing', link: 'https://kmltkc.medium.com/',
-         text: 'Experimenting with writing to improve my writing skills.'},
         {name: '🟠 notle - prototype', link: 'http://kmltkc.de/notle/#/nav',
          text: 'A prototype for a possible note-taking app.'},
         {name: '🚲 data science practice story', link: 'https://nuree.notion.site/Data-Science-Practice-Story-10eb19f23f884c488250921a1f5b5156',
-         text: 'This Data Science Practice Story is here for you; to accompany you through your Data Science learning journey. It will give you the opportunity to practice, apply, and deepen what you have learnt.'},
+         text: 'This Data Science Practice Story is here for you to accompany you through your Data Science learning journey. It will give you the opportunity to practice, apply, and deepen what you have learnt.'},
         {name: '🤖 scraping course', link: 'https://nuree.notion.site/Scraping-with-Python-574b8877cbb54952be4a4561d2e4e9ca',
-         text: 'In this course, you will learn how to scrape information from a website. This is a nice skill to have for Data Scientists because it gives you the ability to easily collect data from websites.'},
+         text: 'This a collection of materials and self-designed exercises. You will learn how to scrape information from a website with basic tools. This is a nice skill to have for Data Scientists because it gives you the ability to easily collect data from websites.'},
       ]
     }"
     >
