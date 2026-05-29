@@ -14,89 +14,100 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.0/dist/cdn.min.js"
     ></script>
     <title>kemal tekce</title>
-    <link rel="icon" href="./images/circle.png" type="image/x-icon " />
+    <link rel="icon" href="./images/logo-small.png" type="image/x-icon " />
   </head>
-  <body class="max-w-[800px] m-auto p-5">
-    <div id="intro" class="h-screen">
-      <div class="text-6xl max-[650px]:text-4xl font-light">
-        <div>hello.</div>
-        <a class="font-normal group hover:underline" href="#about">
-          i'm kemal tekce.
-          <img
-            class="-z-10 mt-5 rounded-[4px] opacity-0 min-[650px]:group-hover:opacity-90 group-hover:duration-1000 absolute w-[70%] max-w-[600px] right-[50px] top-[50px]"
-            src="./images/kml0.jpg"
-            alt=""
-          />
-        </a>
-        <div x-data="{sections: ['experience', 'projects', 'contact']}">
-          <template x-for="section in sections" :key="section">
-            <a
-              :class="section === 'projects' ? 'text-[#C4C4C4] hover:text-[#DCA07C]' : ''"
-              class="hover:text-[#C4C4C4] group flex"
-              x-bind:href="'#' + section"
-            >
-              <template x-for="letter in section + '.'">
-                <div
-                  class="group-hover:scale-x-[-1] group-hover:duration-500"
-                  x-text="letter"
-                ></div>
-              </template>
-            </a>
-          </template>
-        </div>
+  <body class="max-w-[700px] m-auto p-5">
+    <div class="flex gap-x-1 pb-4">
+      <div>
+        <img class="h-[24px]" src="./images/logo-small.png" alt="">
       </div>
-      <div class="pt-5 w-3/4">
-        hi. i'm kemal. yet another programmer, ex-physicist and parent.
+      <p class="font-['Gochi_Hand'] text-[24px] mt-[2px] leading-none">kemkemi</p>
+    </div>
+    <!-- intro -->
+    <div id="intro" class="flex flex-col gap-y-4 pb-8">
+      <div>
+        Hi I'm kemi. Another programmer, ex-physicist and parent who loves researching and building random stuff.
       </div>
-      <div
-        class="flex max-[400px]:flex-col"
-        x-data="{socials: [
-        {name: 'github', link: 'https://github.com/kemaltekce'},
-        {name: 'linkedin', link: 'https://www.linkedin.com/in/kemaltekce'},
-        {name: 'research gate', link: 'https://www.researchgate.net/scientific-contributions/2083087425-Kemal-Tekce'},
+      <div>
+        Currently, I'm helping <a href="https://www.foodtracks.de/" class="text-secondarycolor">bakeries</a> get the most out of their data by utilizing my Python skills. Building pipelines to process data, developing machine learning models for demand forecasting and prototyping scripts for our team to find customer insights.
+      </div>
+      <div>
+        In the past, I worked as a LX designer and Head of Curriculum at a <a href="https://www.techlabs.org/" class="text-secondarycolor">tech education nonprofit</a> and before that as a <a href="https://www.researchgate.net/scientific-contributions/Kemal-Tekce-2083087425" class="text-secondarycolor">researcher</a> modeling polarization möbius strips in light fields.
+      </div>
+      <div>
+        Besides, I’m building random stuff to stratch itches of mine. Some of them worked out, most of them did not. Recently, I built <a href="http://kmltkc.de/calendle-website" class="text-secondarycolor">calendle</a> to be more focused and to track my tasks, and <a href="http://kmltkc.de/notii-website" class="text-secondarycolor">notii</a> to quickly capture some notes by using vim commands.
+      </div>
+      <div>
+        Every now and then, I also write about random stuff like my learning method <a href="https://www.kmltkc.de/leanlearning" class="text-secondarycolor">lele</a>.
+      </div>
+    </div>
+    <!-- projects -->
+    <div
+      class="pb-12"
+      id="projects"
+      x-data="{projects: [
+        {name: 'psychic-waffle', link: 'https://github.com/kemaltekce/psychic-waffle'},
+        {name: 'calendle', link: 'http://kmltkc.de/calendle-website'},
+        {name: 'notii', link: 'http://kmltkc.de/notii-website'},
+      ]
+    }"
+    >
+      <div class="pb-4 flex">
+        <img class="h-[1.5rem] self-center pr-1" src="./images/arrow-down.svg" alt="">
+        <p class="self-center font-semibold">some projects</p>
 
-        ]}"
-      >
-        ---&nbsp;
-        <template x-for="(social, i) in socials" :key="i">
-          <div class="flex">
-            <a
-              x-bind:href="social.link"
-              class="hover:text-[#C4C4C4]"
-              x-text="social.name"
-            ></a>
-            <template x-if="socials.length - 1 !== i">
-              <div>&nbsp;/&nbsp;</div>
-            </template>
+      </div>
+      <img src="./images/logo.png" alt="">
+      <div class="pt-1">
+        <template x-for="project in projects">
+          <div
+            class="border-b-[2px] border-blackcolor py-2 hover:bg-primarycolor hover:text-bgcolor hover:px-2"
+          >
+            <a x-bind:href="project.link">
+              <div
+                class=""
+                x-text="project.name"
+              ></div>
+            </a>
           </div>
         </template>
       </div>
     </div>
-    <img
-      class="mt-5 rounded-[4px] min-[650px]:hidden"
-      src="./images/kml0.jpg"
-      alt=""
-    />
-    <div id="about" class="py-5">
-      <div>// about</div>
-      <div class="pt-3">
-        Hi. I’m Kemal 👋. I'm a physicist by education who made the jump into
-        Data Science, Python Engineering and programming in general.
-        <br />
-        <br />
-        Currently, I'm helping bakeries get most out of their data by utalizing
-        my Python skills. Building pipelines to process data, building a
-        datalake to collect data and building scripts for our team to find
-        customer insights. Besides, I'm trying to build my own tools like a
-        simple digital bullet journal - calendle - or a flexible timeboxing
-        timer - focle.
+    <!-- posts -->
+    <div
+      class="pb-8"
+      id="posts"
+      x-data="{posts: [
+        {name: 'the lele method', link: 'https://kmltkc.de/leanlearning'},
+      ]
+    }"
+    >
+      <div class="pb-2 flex">
+        <img class="h-[1.5rem] self-center pr-1" src="./images/arrow-down.svg" alt="">
+        <p class="self-center font-semibold">some articles</p>
+      </div>
+      <div class="">
+        <template x-for="post in posts">
+          <div
+            class="border-b-[2px] border-blackcolor py-2 hover:bg-primarycolor hover:text-bgcolor hover:px-2"
+          >
+            <a x-bind:href="post.link">
+              <div
+                class=""
+                x-text="post.name"
+              ></div>
+            </a>
+          </div>
+        </template>
       </div>
     </div>
+    <!-- experience -->
     <div
       id="experience"
       class="py-5"
@@ -112,76 +123,35 @@
       ]
     }"
     >
-      <div>// experience</div>
+      <!-- <div class="h-[67px] bg-primarycolor mb-4"> -->
+      <!-- </div> -->
+      <!-- <img src="./images/random.png" alt="" class="mb-4"> -->
+    <!--   <div>// experience</div> -->
+    <!--   <div> -->
+    <!--     <template x-for="experience in experiences"> -->
+    <!--       <div class="py-3"> -->
+    <!--         <div class="flex gap-x-2 max-[650px]:flex-col"> -->
+    <!--           <div class="text-5xl" x-text="experience.title"></div> -->
+    <!--           <a -->
+    <!--             class="text-[#C4C4C4] hover:underline" -->
+    <!--             x-text="experience.place" -->
+    <!--             x-bind:href="experience.link" -->
+    <!--           ></a> -->
+    <!--         </div> -->
+    <!--         <div class="text-[#C4C4C4]" x-text="experience.time"></div> -->
+    <!--       </div> -->
+    <!--     </template> -->
+    <!--   </div> -->
+    <!-- </div> -->
+    <!-- outro -->
+    <div id="outro">
+      <img src="./images/bye.png" alt="" class="mb-4">
       <div>
-        <template x-for="experience in experiences">
-          <div class="py-3">
-            <div class="flex gap-x-2 max-[650px]:flex-col">
-              <div class="text-5xl" x-text="experience.title"></div>
-              <a
-                class="text-[#C4C4C4] hover:underline"
-                x-text="experience.place"
-                x-bind:href="experience.link"
-              ></a>
-            </div>
-            <div class="text-[#C4C4C4]" x-text="experience.time"></div>
-          </div>
-        </template>
+        or wait?! If you want to talk, <a class="text-secondarycolor" href="mailto:kemal.tekce@gmail.com">ping me</a>.
       </div>
     </div>
-    <div
-      id="projects"
-      class="py-5"
-      x-data="{projects: [
-        {name: '🍱 calendle', link: 'http://kmltkc.de/calendle-website',
-         text: 'Calendle is yet another way to be productive with a digital bullet journal and hotkey heavy controls.'},
-        {name: '📚 notii', link: 'http://kmltkc.de/notii-website',
-         text: 'Just a simple page to temporarily write, define tasks, and take quick notes. Powered by Markdown, Vim and custom hotkeys.'},
-        {name: '⏰ focle', link: 'http://kmltkc.de/focle-website',
-         text: 'Yet aonther timer. Focle is an app that aims to improve your focus by using the flexible timboxing method.'},
-        {name: '🎒 lean learning', link: 'http://kmltkc.de/leanlearning',
-         text: 'Lean Learning is yet another learning method. It is designed to make learning more intentinal and joyful.'},
-        {name: '🟠 notle - prototype', link: 'http://kmltkc.de/notle/#/nav',
-         text: 'A prototype for a possible note-taking app.'},
-        {name: '🚲 data science practice story', link: 'https://nuree.notion.site/Data-Science-Practice-Story-10eb19f23f884c488250921a1f5b5156',
-         text: 'This Data Science Practice Story is here for you to accompany you through your Data Science learning journey. It will give you the opportunity to practice, apply, and deepen what you have learnt.'},
-        {name: '🤖 scraping course', link: 'https://nuree.notion.site/Scraping-with-Python-574b8877cbb54952be4a4561d2e4e9ca',
-         text: 'This a collection of materials and self-designed exercises. You will learn how to scrape information from a website with basic tools. This is a nice skill to have for Data Scientists because it gives you the ability to easily collect data from websites.'},
-      ]
-    }"
-    >
-      <div class="bg-[#DCA07C]">// projects</div>
-      <div>
-        <template x-for="project in projects">
-          <div
-            class="group border-[1px] rounded-[3px] border-[#555555] p-4 my-5"
-          >
-            <a x-bind:href="project.link">
-              <div
-                class="mb-2 group-hover:bg-[#DCA07C] group-hover:duration-1000"
-                x-text="project.name"
-              ></div>
-              <div x-text="project.text"></div>
-            </a>
-          </div>
-        </template>
-      </div>
-    </div>
-    <div id="contact" class="py-5 pb-20">
-      <div>// contact</div>
-      <a class="my-3 inline-flex group" href="mailto:kemal.tekce@gmail.com">
-        <span
-          class="px-2 border-2 border-dotted border-[#DCA07C] group-hover:border-[#f0f0f0]"
-        >
-          Let's talk.
-        </span>
-        <img
-          class="mx-2 h-[1rem] self-center opacity-0 group-hover:opacity-100 group-hover:duration-500"
-          src="./images/arrow.svg"
-          alt=""
-        />
-      </a>
-    </div>
+
     <script type="module" src="/main.js"></script>
   </body>
 </html>
+
